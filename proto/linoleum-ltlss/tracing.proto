@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package demiourgoi.linoleum.ltlss;
+
+import "opentelemetry/proto/trace/v1/trace.proto";
+import "opentelemetry/proto/common/v1/common.proto";
+import "opentelemetry/proto/resource/v1/resource.proto";
+
+option java_package = "es.ucm.fdi.demiourgoi.linoleum.ltlss";
+option java_multiple_files = true;
+
+// A span paired with all the context information associated to it on
+// a parent TracesData message returned in a stream in Jaeger's response to a call to `FindTraces`
+message SpanInfo {
+    opentelemetry.proto.trace.v1.Span span = 1;
+    opentelemetry.proto.common.v1.InstrumentationScope scope = 2;
+    // field schema_url in the parent ScopeSpans message
+    string scope_schema_url = 3;
+    opentelemetry.proto.resource.v1.Resource resource = 4;
+    // field schema_url in the parent ResourceSpans message
+    string resource_schema_url = 5;
+}

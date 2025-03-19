@@ -253,7 +253,7 @@ test-ci:
 proto: proto-prepare proto-api-v2 proto-prototest
 
 # proto-all target is used to generate code for all languages as a validation step.
-proto-all: proto-prepare-all proto-api-v2-all proto-api-v3-all
+proto-all: proto-prepare-all proto-api-v2-all proto-api-v3-all proto-linoleum-ltlss
 
 .PHONY: proto-prepare-all
 proto-prepare-all:
@@ -313,6 +313,11 @@ proto-api-v3-all:
 		protoc-gen-swagger/options/annotations.proto \
 		protoc-gen-swagger/options/openapiv2.proto \
 		gogoproto/gogo.proto
+
+.PHONY: proto-linoleum-ltlss
+proto-linoleum-ltlss:
+	$(PROTOC_WITH_GRPC) \
+		proto/linoleum-ltlss/tracing.proto
 
 .PHONY: proto-zipkin
 proto-zipkin: proto-prepare-all
