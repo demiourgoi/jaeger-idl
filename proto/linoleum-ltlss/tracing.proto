@@ -6,7 +6,7 @@ import "opentelemetry/proto/trace/v1/trace.proto";
 import "opentelemetry/proto/common/v1/common.proto";
 import "opentelemetry/proto/resource/v1/resource.proto";
 
-option java_package = "es.ucm.fdi.demiourgoi.linoleum.ltlss";
+option java_package = "io.github.demiourgoi.linoleum.ltlss";
 option java_multiple_files = true;
 
 // A span paired with all the context information associated to it on
