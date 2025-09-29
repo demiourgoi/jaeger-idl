@@ -1,12 +1,12 @@
 syntax = "proto3";
 
-package demiourgoi.linoleum.ltlss;
+package demiourgoi.linoleum.messages;
 
 import "opentelemetry/proto/trace/v1/trace.proto";
 import "opentelemetry/proto/common/v1/common.proto";
 import "opentelemetry/proto/resource/v1/resource.proto";
 
-option java_package = "io.github.demiourgoi.linoleum.ltlss";
+option java_package = "io.github.demiourgoi.linoleum.messages";
 option java_multiple_files = true;
 
 // A span paired with all the context information associated to it on
